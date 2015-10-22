@@ -2,21 +2,21 @@
     <head>
         <title>Sudhan's blog</title>
     </head>
+
     <body>
+
     <div>
         <h1><a href="">Sudhan's Blog</a></h1>
     </div>
+    
+    {% for post in posts %}
     <div>
-        <p>Published 22-10-2015, 9:00 pm</p>
-        <h2><a href="">My first blog post</a></h2>
-        <p>Hello All, I am writing my first blog post. Django is cool and dool</p>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaks }}</p>
     </div>
-    <div>
-        <p>Published 22-10-2015, 9:05 pm</p>
-        <h2><a href="">My second post</a></h2>
-        <p>Today is Vijayadasami, the last day of Navaratri, signifying the end of the 9 auspicious days of
-         worshipping the diving mother. The 10th day is titled so to proclaim the victory of the divine over demonic nature.</p>
-    </div>
-        
+    {% endfor %}        
+
     </body>
+
 </html>
